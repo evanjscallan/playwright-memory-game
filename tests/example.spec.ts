@@ -6,5 +6,4 @@ test('Play the game', async ({ page }) => {
   const mainPage = new MainPage(page)
   await mainPage.navToPage()
   await mainPage.cardSelector()
-  
 })
