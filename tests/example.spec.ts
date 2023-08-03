@@ -1,9 +1,7 @@
 import { test } from '@playwright/test';
-import { MainPage } from './MainPage'
+import { MainPage } from '../pages/MainPage';
 
-
-
-test('Play da game', async ({ page }) => {
+test('Play the game', async ({ page }) => {
   test.slow()
   const mainPage = new MainPage(page)
   await mainPage.navToPage()
