@@ -15,7 +15,7 @@ export class MainPage {
     async cardSelector() {
         let firstCard;
         let lastCard;
-        const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
+        const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
         for (let number = 1; number < 10; number++) {
             //cards below 10 have a 0 in the first digit place (e.g. 01, 02...)
             firstCard = await this.page.getByTestId(`carta0${number}`).first()
@@ -26,7 +26,7 @@ export class MainPage {
             await delay(1000)
         }
         for (let number = 10; number < 16; number++){
-            const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
+            const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
             firstCard = await this.page.getByTestId(`carta${number}`).first()
             lastCard = await this.page.getByTestId(`carta${number}`).last()
             await firstCard.click()
